@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 // Here you can define commands for your build
-                echo "Building version taht i defined -> ${NEW_VERSION)"
+                echo "Building version taht i defined -> ${NEW_VERSION}"
             }
         }
 
