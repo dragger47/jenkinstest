@@ -1,3 +1,4 @@
+def flag=true
 pipeline {
     agent any
 
@@ -10,10 +11,13 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo 'Testing..'
-                // Here you can define commands for your tests
-            }
+           when {
+                expression { env.BRANCH_NAME == 'main' }
+                }
+             steps {
+                echo 'Condition was true --> Running tests for the main branch...'
+                // Add your specific test command for the main branch
+             }
         }
 
         stage('Deploy') {
